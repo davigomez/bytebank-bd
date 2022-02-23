@@ -1,18 +1,11 @@
 
-import 'package:bytebank/screens/contact_form.dart';
 import 'package:bytebank/screens/dashboard.dart';
-import 'package:bytebank/screens/lista_contatos.dart';
 import 'package:flutter/material.dart';
 
-import 'database/app_database.dart';
-import 'models/contact.dart';
-
 void main() {
-  runApp(BytebankApp());
-  save(Contact(1, 'alex', 1000)).then((id) {
-    findAll().then((contacts) => debugPrint(contacts.toString()));
-  });
+  runApp(const BytebankApp());
 }
+
 class BytebankApp extends StatelessWidget {
   const BytebankApp({Key? key}) : super(key: key);
 
@@ -32,7 +25,7 @@ class BytebankApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Dashboard(),
+      home: const Dashboard(),
     );
   }
 }
